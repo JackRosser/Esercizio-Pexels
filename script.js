@@ -128,7 +128,7 @@ const randomImagesGenerator = function () {
     })
     .then((data) => {
       console.log("OGGETTO RANDOM", data);
-      rowPhotos.innerHTML = ""; // Resetta il contenuto prima di aggiungere nuovi elementi
+      rowPhotos.innerHTML = "";
       data.photos.forEach((img) => {
         let col = document.createElement("div");
         col.classList = "col-md-4";
@@ -153,7 +153,7 @@ const randomImagesGenerator = function () {
         // Aggiunge l'event listener al pulsante "Hide"
         const hideButton = col.querySelector(".hide-button");
         hideButton.addEventListener("click", function () {
-          col.remove(); // Rimuove l'intera colonna
+          col.remove();
         });
       });
     })
@@ -181,7 +181,7 @@ const getData = function () {
       let loadImages = document.getElementById("load-images");
 
       loadImages.addEventListener("click", function () {
-        rowPhotos.innerHTML = ""; // Resetta il contenuto prima di aggiungere nuovi elementi
+        rowPhotos.innerHTML = "";
         data.photos.forEach((img) => {
           let col = document.createElement("div");
           col.classList = "col-md-4";
@@ -203,10 +203,9 @@ const getData = function () {
               </div>`;
           rowPhotos.appendChild(col);
 
-          // Aggiunge l'event listener al pulsante "Hide"
           const hideButton = col.querySelector(".hide-button");
           hideButton.addEventListener("click", function () {
-            col.remove(); // Rimuove l'intera colonna
+            col.remove();
           });
         });
       });
